@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout Form</title>
+<style type="text/css">
+  img:hover
+  {
+    height: 100px;
+    width: 100px;
+  }
+  .divone
+  {
+    margin: 0px 0px;
+    padding: 0px;
+    background-color: lightblue;
+    text-align: center;
+    align-items: center;
+  }
+  .divtwo
+  {
+    margin: 0px 150px;
+    padding: 0px;
+    font-size: 24px;
+    font-style: normal;
+    background-color: rgb(115,125,135);
+  }
+  .divthree
+  {
+    background-color: #b3cccc;
+    margin: 0px 150px;
+    padding: 50px;
+  }
+  .span1
+  {
+    font-size: 30px;
+  }
+  p
+  {
+    display: inline;
+    font-size: 20px;
+  }
+  .input
+  {
+    height: 30px;
+    width: 500px;
+    font-size: 20px;
+  }
+  .input:focus
+  {
+    height: 40px;
+    width: 550px;
+    font-size: 30px;
+    background-color:#9999ff;
+    border: 2px solid grey;
+  }
+  .input:hover
+  {
+    height: 20px;
+    width: 400px;
+    font-size: 10px;
+    background-color:#fff9ff;
+    border: 2px solid pink;
+  }
+  .cb1 .cb2
+  {
+    padding: 0px;
+  }
+  .btn
+  {
+    height: 30px;
+    width: 500px;
+    background-color: lightblue;
+  }
+  .btn:hover
+  {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    width: 700px;
+    height: 50px;
+  }
+  .span2
+  {
+    color: grey;
+    font-size: 20px;
+  }
+
+</style>
+</head>
+<form name="form" action="first.html" method="post" onsubmit="return validation()">
+<body style="background-color: grey;">
+  <div class="divone">
+  <img src="/home/rails/Downloads/user1.png">
+  <h1>CheckOut Form</h1>
+  </div>
+  <div class="divtwo">
+    <p>Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+  </div>
+  <div class="divthree">
+    <span class="span1">Billing address</span><br>
+    <p>First Name : </p> <br>
+    <input class="input" id="firstname" type="text" name="fname" placeholder="Ankit"><br><br>
+    <p>Last Name  : </p> <br>
+    <input class="input" id="lastname" type="text" name="lname" placeholder="Suryawanshi"><br><br>
+    <p>UserName : </p><br>
+    <input class="input" id="username" type="text" name="uname" placeholder="UserName"><br><br>
+    <p>Email : </p> <span class="span2">(optional)</span></span><br>
+    <input class="input" id="email" type="text" name="email" placeholder="abc@xyz.com"><br><br>
+    <p>Address : </p> <br>
+    <input class="input" id="add" type="text" name="address" placeholder="72,Stret name"><br><br>
+    <p>Address 2 : </p><span class="span2">(optional)</span></span><br>
+    <input class="input" id="add2" type="text" name="address2" placeholder="Colony,City"><br><br>
+    <div>
+      <div style="display: inline;margin-right: 175px;">Country</div>
+      <div style="display: inline;margin-right: 175px;">State</div>
+      <div style="display: inline;">Zip</div>
+    </div>
+    <br>
+    <div>
+      <div style="display: inline;margin-right: 130px;">
+        <select name="country" id="country">
+          <option value="">Choose...</option>
+          <option value="India">India</option>
+          <option value="United State">United State</option>
+          <option value="England">England</option>
+          <option value="America">America</option>
+        </select>
+      </div>
+      <div style="display: inline;margin-right: 130px;">
+        <select name="state" id="state">
+          <option value="">Choose...</option>
+          <option value="UP">UP</option>
+          <option value="MP">MP</option>
+          <option value="HP">HP</option>
+        </select>
+      </div>
+      <div style="display: inline;">
+        <input class="input" id="zip" type="text" name="zip" style="width: 80px;">
+      </div>
+      <br><br>
+    </div>
+    <hr>
+    <div style="padding: 0px;margin: 0px;font-size: 20px;">
+      <input class="check" type="checkbox" name="c1" class="cb1" value="sameadd" id="chkb1">Shipping address is the same as my billing address<br>
+      <input class="check" type="checkbox" name="c1" class="cb2" value="Yes" id="chkb2">Save this information for next time<br>
+    </div>
+
+    <hr>
+    <div style="padding: 0px;margin: 0px;font-size: 20px;">
+      <input class="check" id="rb1" type="radio" name="r1">Credit card<br>
+      <input class="check" id="rb2" type="radio" name="r1">Debit card<br>
+      <input class="check" id="rb3" type="radio" name="r1">Paypal<br>
+    </div>
+    <br><br>
+    <div>
+      <div style="display: inline;margin-right: 245px;">Name on card</div>
+      <div style="display: inline;margin-right: 175px;">Credit card number</div>
+    </div>
+    <br>
+    <div>
+      <div style="display: inline;margin-right: 135px;">
+        <input class="input" id="noc" type="text" name="NameOnCard" style="width: 200px">
+      </div>
+      <div style="display: inline;margin-right: 135px;">
+        <input class="input" id="ccn" type="text" name="CreditCardNo" style="width: 200px;">
+      </div><br>
+      <span class="span2">Fill name as display on card.</span>
+    </div>
+    <br>
+    <div>
+      <div style="display: inline;margin-right: 245px;">Expiration</div>
+      <div style="display: inline;margin-right: 175px;">CVV</div>
+    </div>
+    <br>
+    <div>
+      <div style="display: inline;margin-right: 135px;">
+        <input class="input" id="exp" type="text" name="Expiration" style="width: 200px">
+      </div>
+      <div style="display: inline;margin-right: 135px;">
+        <input class="input" id="cvv" type="text" name="cvv" style="width: 200px;">
+      </div><br>
+    </div>
+    <hr>
+    <p class="warning" id="warn"></p>
+    <div style="text-align: center;">
+      <button type="submit"  class="btn">Continue to CheckOut
+      </button>
+    </div>
+  </div>
+  </form>
+  <script type="text/javascript">
+    function validation()
+    {
+      var name = document.forms["form"]["fname"].value;
+      var lname = document.forms["form"]["lname"].value;
+      var uname = document.forms["form"]["uname"].value;
+      var email = document.forms["form"]["email"].value;
+      var address = document.forms["form"]["address"].value;
+
+      var country = document.forms["form"]["country"].value;
+      var state = document.forms["form"]["state"].value;
+      var zip = document.forms["form"]["zip"].value;
+
+      /*var r1 = document.forms["form"]["r1"].value;*/
+      var NameOnCard = document.forms["form"]["NameOnCard"].value;
+      var CreditCardNo = document.forms["form"]["CreditCardNo"].value;
+      var Expiration = document.forms["form"]["Expiration"].value;
+      var cvv = document.forms["form"]["cvv"].value;
+      if(name =="")
+      {
+        //alert("Name must be Filled out");
+        document.getElementById("firstname").style.border="thin solid red";
+        document.forms["form"]["fname"].focus();
+        document.getElementById("warn").innerHTML="Please Fill All the mandatory filds";
+        document.getElementById("warn").style.color="red";
+        return false;
+      }
+      if(lname =="")
+      {
+        //alert("Name must be Filled out");
+        document.getElementById("lastname").style.border="thin solid red";
+        document.forms["form"]["lname"].focus();
+        document.getElementById("warn").innerHTML="Please Fill All the mandatory filds";
+        document.getElementById("warn").style.color="red";
+        return false;
+      }
+      if(uname =="")
+      {
+        //alert("Name must be Filled out");
+        document.getElementById("username").style.border="thin solid red";
+        document.forms["form"]["uname"].focus();
+        document.getElementById("warn").innerHTML="Please Fill All the mandatory filds";
+        document.getElementById("warn").style.color="red";
+        return false;
+      }
+      if(email =="")
+      {
+        //alert("Name must be Filled out");
+        document.getElementById("email").style.border="thin solid red";
+        document.forms["form"]["email"].focus();
+        document.getElementById("warn").innerHTML="Please Fill All the mandatory filds";
+        document.getElementById("warn").style.color="red";
+        return false;
+      }
+      if(address =="")
+      {
+        //alert("Name must be Filled out");
+        document.getElementById("add").style.border="thin solid red";
+        document.forms["form"]["address"].focus();
+        document.getElementById("warn").innerHTML="Please Fill All the mandatory filds";
+        document.getElementById("warn").style.color="red";
+        return false;
+      }
+      if(country =="")
+      {
+        //alert("Name must be Filled out");
+        document.getElementById("country").style.border="thin solid red";
+        document.forms["form"]["country"].focus();
+        document.getElementById("warn").innerHTML="Please Fill All the mandatory filds";
+        document.getElementById("warn").style.color="red";
+        return false;
+      }
+      if(state =="")
+      {
+        //alert("Name must be Filled out");
+        document.getElementById("state").style.border="thin solid red";
+        document.forms["form"]["state"].focus();
+        document.getElementById("warn").innerHTML="Please Fill All the mandatory filds";
+        document.getElementById("warn").style.color="red";
+        return false;
+      }
+      if(zip =="")
+      {
+        //alert("Name must be Filled out");
+        document.getElementById("zip").style.border="thin solid red";
+        document.forms["form"]["zip"].focus();
+        document.getElementById("warn").innerHTML="Please Fill All the mandatory filds";
+        document.getElementById("warn").style.color="red";
+        return false;
+      }
+
+      var radio_buttons = form.r1;
+      var re = false;
+
+// traverse the array with radio buttons, if one is checked, make 're' true and stops
+      for(var i=0; i<radio_buttons.length; i++)
+      {
+        if(radio_buttons[i] == true)
+        {
+          re = true;
+        }
+      }
+
+// if 're' false, means no one radio button checked
+      if(re == false) alert('Radio button not checked');
+      /*if(r1 =="")
+      {
+        //alert("Name must be Filled out");
+        document.getElementById("rb1").style.border="thin solid red";
+        document.getElementById("rb2").style.border="thin solid red";
+        document.getElementById("rb3").style.border="thin solid red";
+        document.forms["form"]["r1"].focus();
+        return false;
+      }*/
+      if(NameOnCard=="")
+      {
+        //alert("Name must be Filled out");
+        document.getElementById("noc").style.border="thin solid red";
+        document.forms["form"]["NameOnCard"].focus();
+        document.getElementById("warn").innerHTML="Please Fill All the mandatory filds";
+        document.getElementById("warn").style.color="red";
+        return false;
+      }
+      if(CreditCardNo =="")
+      {
+        //alert("Name must be Filled out");
+        document.getElementById("ccn").style.border="thin solid red";
+        document.forms["form"]["CreditCardNo"].focus();
+        document.getElementById("warn").innerHTML="Please Fill All the mandatory filds";
+        document.getElementById("warn").style.color="red";
+        return false;
+      }
+      if(Expiration=="")
+      {
+        //alert("Name must be Filled out");
+        document.getElementById("exp").style.border="thin solid red";
+        document.forms["form"]["Expiration"].focus();
+        document.getElementById("warn").innerHTML="Please Fill All the mandatory filds";
+        document.getElementById("warn").style.color="red";
+        return false;
+      }
+      if(cvv =="")
+      {
+        //alert("Name must be Filled out");
+        document.getElementById("cvv").style.border="thin solid red";
+        document.forms["form"]["cvv"].focus();
+        document.getElementById("warn").innerHTML="Please Fill All the mandatory filds";
+        document.getElementById("warn").style.color="red";
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
